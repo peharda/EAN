@@ -1,0 +1,78 @@
+<html>
+   <head>
+       <title>Prüffziffer berechnen</title>
+       <meta http-equiv>
+       <script>
+
+       function rechne() {
+       var vAusgabe;    
+       var vZahl1;
+       var vZahl2;
+       var vZahl3;
+       var vZahl4;
+       var vZahl5;
+       var vZahl6;
+       var vZahl7;
+       var vZahl8;
+       var vZahl9;
+       var vZahl10;
+       var vZahl11;
+       var vZahl12;
+       var v1 = 1;
+       var v2 = 3;
+       var vSumme;
+       var vPruefziffer;
+       var vAusgabeHtml;
+
+       vZahl1 = parsefloat(document.getElementById("idZahl1").value);
+       vZahl2 = parsefloat(document.getElementById("idZahl2").value);
+       vZahl3 = parsefloat(document.getElementById("idZahl3").value);
+       vZahl4 = parsefloat(document.getElementById("idZahl4").value);
+       vZahl5 = parsefloat(document.getElementById("idZahl5").value);
+       vZahl6 = parsefloat(document.getElementById("idZahl6").value);
+       vZahl7 = parsefloat(document.getElementById("idZahl7").value);
+       vZahl8 = parsefloat(document.getElementById("idZahl8").value);
+       vZahl9 = parsefloat(document.getElementById("idZahl9").value);
+       vZahl10 = parsefloat(document.getElementById("idZahl10").value);
+       vZahl11 = parsefloat(document.getElementById("idZahl11").value);
+       vZahl12 = parsefloat(document.getElementById("idZahl12").value);
+
+       vSumme = (vZahl1*v1) + (vZahl2*v2) + (vZahl3*v1) + (vZahl4*v2) + (vZahl5*v1) + (vZahl6*v2) + (vZahl7*v1) + (vZahl8*v2) + (vZahl9*v1) + (vZahl10*v2) + (vZahl11*v1) + (vZahl12*v2);
+
+       vPruefziffer=10-(vSumme%10);
+
+       if(vPruefziffer==10){
+
+        vPruefziffer=0;
+       }
+       
+      vAusgabeHtml = "Die Prüfsumme ist: " +vSumme+ " und die Prüfziffer ist: " + vPruefziffer;
+
+      document.getElementById("idAusgabeHtml").innerHTML=vAusgabeHtml;
+
+
+
+       }
+    </script>
+   </head>
+   <body>
+
+    <h3>Prüffziffer berechnen</h3>
+    <input id="idZahl1" type="number" value="Wert">
+    <input id="idZahl2" type="number" value="Wert">
+    <input id="idZahl3" type="number" value="Wert">
+    <input id="idZahl4" type="number" value="Wert">
+    <input id="idZahl5" type="number" value="Wert">
+    <input id="idZahl6" type="number" value="Wert">
+    <input id="idZahl7" type="number" value="Wert">
+    <input id="idZahl8" type="number" value="Wert">
+    <input id="idZahl9" type="number" value="Wert">
+    <input id="idZahl10" type="number" value="Wert">
+    <input id="idZahl11" type="number" value="Wert">
+    <input id="idZahl12" type="number" value="Wert">
+   </br>
+   </br>
+   <button onclick="rechne()"> Berechne Prüffziffer</button>
+    <div id="AusgabeHtml"></div>
+   </body>
+</html>
